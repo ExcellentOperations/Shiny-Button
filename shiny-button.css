@@ -1,0 +1,101 @@
+/*  CSS allows for any element to glisten as in the sun  */
+.ttp-service, .ttp-service-two { /* setup element you want to edit with shine effect */
+    width: 31%;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+    border: 1px solid black;
+		text-align: center !important;
+	  min-height: 0px !important;
+		margin: 15px;
+    border-radius: 6px;
+	  text-transform: uppercase;
+		display: inline-block;
+		text-align: center;
+}
+
+.ttp-service > li:hover, .ttp-service-two > li:hover { /* depending on background color you may want to set text to white */
+    color: white;
+}
+
+.ttp-service:before, .ttp-service-two:before { /*  */
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+.ttp-service > li a, .ttp-service-two > li a { /* targeting hyperlink text in background */
+    font-size: 28px;
+}
+
+.ttp-service ul.sub-menu li a, .ttp-service-two ul.sub-menu li a { /* same as above */
+    font-size: 18px !important;
+    font-weight: normal;
+}
+
+.ttp-service li, .ttp-service-two li { /* dependent on your type of list style, personally looks better without bullets */
+    list-style-type: none !important;
+		padding-top: 10px;
+}
+
+.ttp-service > li:hover, .ttp-service-two > li:hover { /* set background image/gradient to selective colors */
+    background-image: linear-gradient( 135deg, #92FFC0 0%, #002661 100%);
+}
+
+.ttp-service > li:hover a, .ttp-service-two > li:hover a { /* */
+    color: white !important;
+}
+
+.ttp-service li > a:hover, .ttp-service-two li > a:hover { /* for user to see links have pathway, not text */
+    text-decoration: underline;
+}
+
+.ttp-service li, .ttp-service-two li { /* edit list text */
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+/* The "shine" element */
+
+.ttp-service > li:after, .ttp-service-two > li:after { /* setup for the css effect */
+  content: "";
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+}
+
+/* Hover state - trigger effect */
+
+.ttp-service > li:hover:after, .ttp-service-two > li:hover:after { /* after hover these styles take place, allows element to glisten */
+  opacity: 1;
+  top: -30%;
+  left: -30%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+}
+
+/* Active state */
+
+.ttp-service > li:active:after, .ttp-service-two > li:active:after { /* activates css */
+  opacity: 0;
+}
